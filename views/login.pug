@@ -1,0 +1,37 @@
+extends login-layout
+
+block content
+  .container-fluid#page
+    .row
+      .col-12
+        .row.justify-content-center#logo
+          .col-12
+            img(src="/images/logo.png")
+        .row.justify-content-center.my-4
+          .col-12.col-md-12.col-lg-8
+            .card#loginpanel
+              .car-block 
+                .row
+                  .col-md-7#left-panel
+                    h2 BBraun Desk Reservation
+                    hr(align="left")
+                    .m-t-1
+                      span Here you can reserve a desk for yourself
+                  .col-md-5.form
+                    form(action="/" onsubmit="return validateForm()" method="POST")#loginbtnform
+                      p.welcome Podaj swoje dane
+                      label(for="firstname").labelview Imię
+                      .input-group.input-group-username
+                        span.input-group-addon
+                          i.fa.fa-user-circle 
+                        input(type="text" name="firstname" autofocus value placeholder="Imię" autocomplete="off").form-control#firstname
+                      label(for="firstname").labelview Imię
+                      .input-group.input-group-username
+                        span.input-group-addon
+                          i.fa.fa-user-circle 
+                        input(type="text" name="lastname" value placeholder="Nazwisko" autocomplete="off").form-control#lastname
+                      .my-3
+                      button(type="submit").btn.btn-primary.btn-block#loginbtn Rezerwuj biurko
+                    .my-1
+                    //-   p
+                    //-     a(href="/admin") Zaloguj jako administrator

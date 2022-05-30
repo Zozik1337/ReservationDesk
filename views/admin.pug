@@ -1,0 +1,34 @@
+extends admin-layout
+
+block content
+  .container-fluid#page
+    .row
+      .col-12
+        .row.justify-content-center#logo
+          .col-12
+            img(src="/images/logo.png")
+        .row.justify-content-center.my-4
+          .col-12.col-md-12.col-lg-8
+            .card#loginpanel
+              .car-block 
+                .row
+                  .col-md-7#left-panel
+                    h2 BBraun Desk Reservation
+                    hr(align="left")
+                    .m-t-1
+                      span Here you can reserve a desk for yourself
+                  .col-md-5.form
+                    form(action="/admin" method="POST")
+                      p.welcome Logowanie administratora
+                      label(for="username").labelview Nazwa użytkownika
+                      .input-group.input-group-username
+                        span.input-group-addon
+                          i.fa.fa-user-circle 
+                        input(type="text" name="username" autofocus value placeholder="Nazwa uzytkownika" autocomplete="off").form-control#firstname
+                      label(for="password").labelview Hasło
+                      .input-group.input-group-username
+                        span.input-group-addon
+                          i.fa.fa-lock
+                        input(type="password" name="password" value placeholder="Haslo" autocomplete="off").form-control#lastname
+                      .my-3
+                      button(type="submit").btn.btn-primary.btn-block#loginbtn Zaloguj się!

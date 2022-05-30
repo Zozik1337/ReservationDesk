@@ -1,0 +1,78 @@
+extends admin-panel-layout
+
+block content
+    .menubar
+        img(src="/images/logo.png")#logo
+        #reservetion-box
+            form(action="/adminpanel" method="POST")#myform
+                a(onclick='document.getElementById("myform").submit()').i.fa.fa-calendar.fa-xl#icon
+        #userdata-box
+            span#userdata ADMINISTRATOR
+    .office
+        .segment
+            button(type="button" class="btn" onclick="showName(52)").desk#52 52
+            button(type="button" class="btn" onclick="showName(51)").desk#51 51
+            button(type="button" class="btn" onclick="showName(50)").desk#50 50
+            button(type="button" class="btn" onclick="showName(49)").desk#49 49
+            button(type="button" class="btn" onclick="showName(48)").desk#48 48
+            button(type="button" class="btn" onclick="showName(47)").desk#47 47
+            button(type="button" class="btn" onclick="showName(46)").desk#46 46
+            button(type="button" class="btn" onclick="showName(45)").desk#45 45
+        .segment
+            button(type="button" class="btn" onclick="showName(44)").desk#44 44
+            button(type="button" class="btn" onclick="showName(43)").desk#43 43
+            button(type="button" class="btn" onclick="showName(42)").desk#42 42
+            button(type="button" class="btn" onclick="showName(41)").desk#41 41
+            button(type="button" class="btn" onclick="showName(40)").desk#40 40
+            button(type="button" class="btn" onclick="showName(39)").desk#39 39
+            button(type="button" class="btn" onclick="showName(38)").desk#38 38
+            button(type="button" class="btn" onclick="showName(37)").desk#37 37
+        .segment
+            button(type="button" class="btn" onclick="showName(36)").desk#36 36
+            button(type="button" class="btn" onclick="showName(35)").desk#35 35
+            button(type="button" class="btn" onclick="showName(34)").desk#34 34
+            button(type="button" class="btn" onclick="showName(33)").desk#33 33 
+            button(type="button" class="btn" onclick="showName(32)").desk#32 32
+            button(type="button" class="btn" onclick="showName(31)").desk#31 31
+            button(type="button" class="btn" onclick="showName(30)").desk#30 30
+            button(type="button" class="btn" onclick="showName(29)").desk#29 29
+        .segment
+            button(type="button" class="btn" onclick="showName(28)").desk#28 28
+            button(type="button" class="btn" onclick="showName(27)").desk#27 27
+            button(type="button" class="btn" onclick="showName(26)").desk#26 26
+            button(type="button" class="btn" onclick="showName(25)").desk#25 25
+            button(type="button" class="btn" onclick="showName(24)").desk#24 24
+            button(type="button" class="btn" onclick="showName(23)").desk#23 23
+            button(type="button" class="btn" onclick="showName(22)").desk#22 22
+            button(type="button" class="btn" onclick="showName(21)").desk#21 21
+        .segment
+            button(type="button" class="btn" onclick="showName(20)").desk#20 20
+            button(type="button" class="btn" onclick="showName(19)").desk#19 19
+            button(type="button" class="btn" onclick="showName(18)").desk#18 18
+            button(type="button" class="btn" onclick="showName(17)").desk#17 17
+            button(type="button" class="btn" onclick="showName(16)").desk#16 16
+            button(type="button" class="btn" onclick="showName(15)").desk#15 15
+            button(type="button" class="btn" onclick="showName(14)").desk#14 14
+            button(type="button" class="btn" onclick="showName(13)").desk#13 13
+        .segment-sm 
+            button(type="button" class="btn" onclick="showName(12)").desk.small#12 12
+            button(type="button" class="btn" onclick="showName(11)").desk.small#11 11
+            button(type="button" class="btn" onclick="showName(10)").desk.small#10 10
+            button(type="button" class="btn" onclick="showName(9)").desk.small#9 9 
+            button(type="button" class="btn" onclick="showName(8)").desk.small#8 8 
+            button(type="button" class="btn" onclick="showName(7)").desk.small#7 7
+        .segment-sm 
+            button(type="button" class="btn" onclick="showName(6)").desk.small#6 6
+            button(type="button" class="btn" onclick="showName(5)").desk.small#5 5
+            button(type="button" class="btn" onclick="showName(4)").desk.small#4 4
+            button(type="button" class="btn" onclick="showName(3)").desk.small#3 3 
+            button(type="button" class="btn" onclick="showName(2)").desk.small#2 2
+            button(type="button" class="btn" onclick="showName(1)").desk.small#1 1 
+        script( src='./javascripts/admin.js')
+        script.
+            disabledDesks= "#{disabledDesks}";
+            let disabledDesksList = JSON.parse(disabledDesks);
+            for(let i = 0; i < disabledDesksList.length; i++){
+                let element = document.getElementById(`${disabledDesksList[i]}`);
+                element.classList.add("disable-admin")
+            }

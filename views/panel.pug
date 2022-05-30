@@ -1,0 +1,146 @@
+extends panel-layout
+
+mixin modal(title,id)
+    div(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static").modal.fade#exampleModal
+        div(role="document").modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#pierwszyModalLabel Dostępne terminy
+                    button(type="button" onclick="closeModal()" data-bs-dismiss="modal" aria-label="Close").btn.btn-primary.btn-block.close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    .popup#popup
+                    .container-fluid#main
+                        .row#calendarHeader.justify-content-md-center
+                            .col-md-1.buttonPadding
+                                button(onclick="prevPage()" style="display: none").btn.btn-primary.btn-block#prev Prev
+                            .col-md-5#actualMonth
+                            .col-md-1.buttonPadding
+                                button(onclick="nextPage()").btn.btn-primary.btn-block#next Next
+                        .row.justify-content-md-center
+                            .col-md-1.day.weed420
+                                p Pon.
+                            .col-md-1.day.weed420
+                                p Wt.
+                            .col-md-1.day.weed420
+                                p Sr.
+                            .col-md-1.day.weed420
+                                p Czw.
+                            .col-md-1.day.weed420
+                                p Pt.
+                            .col-md-1.day.weed420
+                                p Sb.
+                            .col-md-1.day.weed420
+                                p Nd.  
+                        .row#one.justify-content-md-center
+                        .row#two.justify-content-md-center
+                        .row#three.justify-content-md-center
+                        .row#four.justify-content-md-center
+                        .row#five.justify-content-md-center
+                        .row#six.justify-content-md-center
+                .modal-footer
+                    span#whoreserved Test Test
+                    button(type="button" onclick="closeModal()" class="btn btn-secondary" data-bs-dismiss="modal") Close
+                    button(type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="saveReservation()") Rezerwuj
+
+
+mixin modalreservation()
+    div(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static").modal.fade#modalreseravtion
+        div(role="document").modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#exampleModalLabel Rezerwacje
+                    button(type="button" data-bs-dismiss="modal" aria-label="Close").btn.btn-primary.btn-block.close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    #cancelReservationDiv
+                .modal-footer
+
+block content
+    +modalreservation()
+        span hejka
+    +modal("title","testModal")
+        span hejka
+    .menubar
+        img(src="/images/logo.png")#logo
+        #reservetion-box
+            a(onclick="reservationCancelModal()" data-bs-toggle="modal" data-bs-target="#modalreseravtion").i.fa.fa-calendar.fa-xl#icon
+        #userdata-box
+            span#userdata #{firstname} #{lastname}
+    .main-box
+        .office
+            .segment
+                button(type="button" onclick="generateModal(52)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#52 52
+                button(type="button" onclick="generateModal(51)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#51 51
+                button(type="button" onclick="generateModal(50)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#50 50
+                button(type="button" onclick="generateModal(49)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#49 49
+                button(type="button" onclick="generateModal(48)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#48 48
+                button(type="button" onclick="generateModal(47)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#47 47
+                button(type="button" onclick="generateModal(46)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#46 46
+                button(type="button" onclick="generateModal(45)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#45 45
+            .segment
+                button(type="button" onclick="generateModal(44)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#44 44
+                button(type="button" onclick="generateModal(43)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#43 43
+                button(type="button" onclick="generateModal(42)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#42 42
+                button(type="button" onclick="generateModal(41)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#41 41
+                button(type="button" onclick="generateModal(40)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#40 40
+                button(type="button" onclick="generateModal(39)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#39 39
+                button(type="button" onclick="generateModal(38)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#38 38
+                button(type="button" onclick="generateModal(37)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#37 37
+            .segment
+                button(type="button" onclick="generateModal(36)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#36 36
+                button(type="button" onclick="generateModal(35)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#35 35
+                button(type="button" onclick="generateModal(34)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#34 34
+                button(type="button" onclick="generateModal(33)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#33 33
+                button(type="button" onclick="generateModal(32)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#32 32
+                button(type="button" onclick="generateModal(31)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#31 31
+                button(type="button" onclick="generateModal(30)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#30 30
+                button(type="button" onclick="generateModal(29)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#29 29
+            .segment
+                button(type="button" onclick="generateModal(28)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#28 28
+                button(type="button" onclick="generateModal(27)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#27 27
+                button(type="button" onclick="generateModal(26)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#26 26
+                button(type="button" onclick="generateModal(25)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#25 25
+                button(type="button" onclick="generateModal(24)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#24 24
+                button(type="button" onclick="generateModal(23)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#23 23
+                button(type="button" onclick="generateModal(22)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#22 22
+                button(type="button" onclick="generateModal(21)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#21 21
+            .segment
+                button(type="button" onclick="generateModal(20)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#20 20
+                button(type="button" onclick="generateModal(19)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#19 19
+                button(type="button" onclick="generateModal(18)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#18 18
+                button(type="button" onclick="generateModal(17)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#17 17
+                button(type="button" onclick="generateModal(16)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#16 16
+                button(type="button" onclick="generateModal(15)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#15 15
+                button(type="button" onclick="generateModal(14)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#14 14
+                button(type="button" onclick="generateModal(13)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk#13 13
+            .segment-sm
+                button(type="button" onclick="generateModal(12)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#12 12
+                button(type="button" onclick="generateModal(11)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#11 11
+                button(type="button" onclick="generateModal(10)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#10 10
+                button(type="button" onclick="generateModal(9)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#9 9
+                button(type="button" onclick="generateModal(8)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#8 8
+                button(type="button" onclick="generateModal(7)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#7 7
+            .segment-sm
+                button(type="button" onclick="generateModal(6)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#6 6
+                button(type="button" onclick="generateModal(5)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#5 5
+                button(type="button" onclick="generateModal(4)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#4 4
+                button(type="button" onclick="generateModal(3)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#3 3
+                button(type="button" onclick="generateModal(2)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#2 2
+                button(type="button" onclick="generateModal(1)" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal").desk.small#1 1
+            script.
+                disabledDesks = "#{disabledDesks}";
+                userReserv = "#{userReservations}";
+                let disabledDesksList = JSON.parse(disabledDesks);
+                for(let i = 0; i < disabledDesksList.length; i++){
+                    let element = document.getElementById(`${disabledDesksList[i]}`);
+                    element.classList.add("disable")
+                }
+                fname= "#{firstname}"
+                lname= "#{lastname}"
+                let firstname = fname;
+                let lastname = lname;
+                document.getElementById("userdata").innerHTML = `${firstname.toUpperCase()} ${lastname.toUpperCase()}`
+            script(src='./javascripts/panelModal.js')
+            script(src='./javascripts/popup.js')
+            script(src='./javascripts/panelReservations.js')

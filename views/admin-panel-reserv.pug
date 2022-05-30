@@ -1,0 +1,58 @@
+extends admin-panel-layout
+
+mixin modalreservation()
+    div(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static").modal.fade#modalreseravtion
+        div(role="document").modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#exampleModalLabel Rezerwacje
+                    button(type="button" data-bs-dismiss="modal" aria-label="Close").btn.btn-primary.btn-block.close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    div(style="text-align:center; font-weight: 600; padding-bottom: 10px;").row
+                        .col-md-2
+                            span Biurko
+                        .col-md-8
+                            span Data rezerwacji
+                        .col-md-2
+                    #cancelReservationDiv   
+                .modal-footer
+
+mixin modaldeskreservation()
+    div(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static").modal.fade#modaldeskreseravtion
+        div(role="document").modal-dialog
+            .modal-content
+                .modal-header
+                    h5.modal-title#exampleModalLabel Rezerwacje
+                    button(type="button" data-bs-dismiss="modal" aria-label="Close").btn.btn-primary.btn-block.close
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    div(style="text-align:center; font-weight: 600; padding-bottom: 10px;").row
+                        .col-md-4
+                            span Imie i Nazwisko
+                        .col-md-6
+                            span Data rezerwacji
+                        .col-md-2
+                    #cancelDeskReservationDiv   
+                .modal-footer
+
+block content
+    +modalreservation()
+    +modaldeskreservation()
+    .menubar
+        img(src="/images/logo.png")#logo
+        #reservetion-box
+            form(action="/adminreserv" method="POST")#myform
+                a(onclick='document.getElementById("myform").submit()').i.fa.fa-house.fa-xl#icon
+        #userdata-box
+            span#userdata ADMINISTRATOR
+    div(style="margin-top: 60px;").container
+        .row
+            .col-md-6
+                div(style="margin-bottom: 20px; text-align: center;").row#user
+                    h2(style="margin-top:5px; margin-bottom:15px") Lista użytkowników
+            .col-md-6
+                div(style="margin-bottom: 20px; text-align: center;").row#desk
+                    h2(style="margin-top:5px; margin-bottom:15px") Lista biurek
+
+    script(src='./javascripts/admin-reserv.js')
